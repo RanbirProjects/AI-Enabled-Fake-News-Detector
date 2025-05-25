@@ -1,0 +1,298 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation styles */
+nav {
+    background-color: #1a73e8; /* Blue background */
+    color: white;
+    padding: 0.8rem 0;
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Space between navigation items */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #f5f5f5; /* Lighter color on hover */
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position the underline below the text */
+    width: 100%;
+    height: 2px;
+    background-color: #f5f5f5; /* Color of the underline */
+    transform: scaleX(0); /* Start with no underline */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1); /* Expand underline on hover */
+    transform-origin: bottom left;
+}
+
+/* Header styles */
+header {
+    margin-bottom: 3rem;
+    margin-top: 4rem; /* Add margin to push content below the sticky nav */
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee; /* Add a subtle border */
+}
+
+.profile-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #1a73e8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h1 {
+    font-size: 3rem; /* Increased font size */
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.profile-info h2 {
+    font-size: 1.6rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #555;
+}
+
+.contact-info i {
+    color: #1a73e8;
+    font-size: 1.1rem;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1a73e8;
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    margin-left: 1rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #1a73e8;
+}
+
+.timeline-item {
+    margin-bottom: 2.5rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: -0.5rem;
+    width: 12px;
+    height: 12px;
+    background-color: #1a73e8;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 1;
+}
+
+.timeline-item h3 {
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-item h4 {
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+.date {
+    color: #1a73e8;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.location {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-item ul {
+    list-style: disc;
+    margin-left: 1.25rem;
+}
+
+.timeline-item li {
+    margin-bottom: 0.5rem;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.skill-category h3 {
+    color: #1a73e8;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 0.5rem;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    margin-bottom: 0.6rem;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #555;
+}
+
+.skill-category li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #28a745;
+    position: absolute;
+    left: 0;
+}
+
+/* Footer styles */
+footer {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: #555;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #1a73e8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .contact-info {
+        align-items: center;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        margin-left: 0.5rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: -0.6rem;
+    }
+} 
