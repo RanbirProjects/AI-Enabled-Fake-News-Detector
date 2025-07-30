@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routing Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Netlify Routing Test</h1>
+    
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/random-path">Random Path</a>
+    </div>
+    
+    <div id="content">
+        <p>This page tests if Netlify redirects are working correctly for client-side routing.</p>
+        <p>Try clicking the links above. If redirects are working, you should stay on this page.</p>
+        <p>Current path: <span id="current-path"></span></p>
+    </div>
+
+    <script>
+        // Display the current path
+        document.getElementById('current-path').textContent = window.location.pathname;
+        
+        // Handle navigation without page reload
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const path = link.getAttribute('href');
+                window.history.pushState({}, '', path);
+                document.getElementById('current-path').textContent = path;
+            });
+        });
+    </script>
+</body>
+</html>
