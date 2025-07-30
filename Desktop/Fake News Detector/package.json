@@ -1,0 +1,25 @@
+{
+  "name": "ai-enabled-fake-news-detector",
+  "version": "1.0.0",
+  "description": "AI-enabled application to detect fake news from text, URLs, and titles",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [
+    "fake news",
+    "AI",
+    "detection",
+    "MERN"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
