@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Fake News Detector - Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend for the AI-Enabled Fake News Detector application. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Netlify Deployment
+
+This project includes configuration for easy deployment to Netlify:
+
+1. The `netlify.toml` file configures the build settings
+2. The `_redirects` file in the public directory ensures client-side routing works correctly
+3. The `deploy-netlify.sh` script automates the deployment process
+
+### Troubleshooting 404 Errors
+
+If you encounter "Page not found" errors after deployment:
+
+1. Make sure the `_redirects` file is being copied to the build directory
+2. Verify that the `netlify.toml` configuration is correct
+3. Try redeploying with the updated configuration
 
 ## Available Scripts
 

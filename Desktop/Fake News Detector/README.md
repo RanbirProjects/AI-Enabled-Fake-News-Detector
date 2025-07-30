@@ -39,7 +39,20 @@ A modern web application that uses rule-based algorithms to detect fake news fro
 
 ## Deployment Instructions
 
-### Frontend (Netlify)
+### Automated Deployment
+
+Use the provided deployment scripts to automate the process:
+
+```bash
+# Deploy both client and server
+./deploy-all.sh
+
+# Or deploy individually
+cd client && ./deploy-netlify.sh
+cd server && ./deploy-render.sh
+```
+
+### Manual Frontend Deployment (Netlify)
 
 1. Push your code to GitHub
 2. Log in to Netlify and click "New site from Git"
@@ -49,6 +62,14 @@ A modern web application that uses rule-based algorithms to detect fake news fro
    - Build command: `npm run build`
    - Publish directory: `build`
 5. Click "Deploy site"
+
+#### Troubleshooting Netlify 404 Errors
+
+If you encounter "Page not found" errors on Netlify:
+
+1. Ensure the `_redirects` file exists in the `client/public` directory
+2. Verify your `netlify.toml` configuration is correct
+3. Try deploying again with the updated configuration
 
 ### Backend (Optional - for full functionality)
 
