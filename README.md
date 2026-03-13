@@ -1,102 +1,248 @@
-# AI-Enabled Fake News Detector
+<h1 align="center">🧠 AI-Enabled Fake News Detector</h1>
 
-A modern web application that uses rule-based algorithms to detect fake news from text, URLs, and titles. The application provides a confidence score and detailed analysis of the content.
+<p align="center">
+A modern web application that detects fake news using rule-based algorithms and provides a confidence score with detailed analysis.
+</p>
 
-## Features
+<p align="center">
 
-- Multiple input types: Text, URL, and Title analysis
-- Confidence score visualization
-- Detailed explanation of detection results
-- History tracking of previous checks
-- Responsive design for all devices
-- Fallback to in-memory storage when MongoDB is unavailable
+![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
+![Node](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js)
+![Express](https://img.shields.io/badge/Framework-Express-black?logo=express)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-green?logo=mongodb)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## Project Structure
+</p>
 
-```
-├── client/            # React frontend
-│   ├── public/        # Static files
-│   ├── src/           # React source code
-│   └── netlify.toml   # Netlify deployment configuration
-└── server/            # Express backend
-    ├── models/        # MongoDB schemas
-    ├── routes/        # API routes
-    └── index.js       # Server entry point
-```
+---
 
-## Technologies Used
+# 🎥 Demo Preview
 
-### Frontend
-- React
-- Axios for API requests
-- CSS with custom animations
-- SVG icons and patterns
+<p align="center">
+<img src="https://media.giphy.com/media/QBd2kLB5qDmysEXre9/giphy.gif" width="600"/>
+</p>
 
-### Backend
-- Node.js with Express
-- MongoDB with Mongoose
-- In-memory fallback storage
+---
 
-## Deployment Instructions
+# 📑 Table of Contents
 
-### Automated Deployment
+- 🚀 Features
+- 🛠 Tech Stack
+- 📂 Project Structure
+- ⚙ Installation
+- ▶ Running Locally
+- 🌐 Deployment
+- 📊 How It Works
+- 👨‍💻 Author
 
-Use the provided deployment scripts to automate the process:
+---
+
+# 🚀 Features
+
+✨ Detect fake news from **Text, URL, or Title**
+
+📊 **Confidence score visualization**
+
+🧠 Rule-based **content analysis**
+
+📜 Detailed explanation of detection results
+
+🕘 History tracking of previous checks
+
+📱 Fully responsive design
+
+💾 MongoDB database with **in-memory fallback**
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- ⚛ React.js
+- 🔗 Axios
+- 🎨 CSS animations
+- 🧩 SVG icons & patterns
+
+## Backend
+
+- 🟢 Node.js
+- 🚀 Express.js
+- 🍃 MongoDB + Mongoose
+- 🧠 Rule-based detection algorithm
+
+---
+
+# 📂 Project Structure
 
 ```bash
-# Deploy both client and server
-./deploy-all.sh
-
-# Or deploy individually
-cd client && ./deploy-netlify.sh
-cd server && ./deploy-render.sh
+fake-news-detector/
+│
+├── client/                # React frontend
+│   │
+│   ├── public/
+│   │   ├── index.html
+│   │   └── _redirects
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.js
+│   │   └── index.js
+│   │
+│   └── netlify.toml       # Netlify configuration
+│
+├── server/                # Express backend
+│   │
+│   ├── models/
+│   │   └── NewsCheck.js
+│   │
+│   ├── routes/
+│   │   └── detector.js
+│   │
+│   └── index.js
+│
+├── README.md
+└── package.json
 ```
 
-### Manual Frontend Deployment (Netlify)
+---
 
-1. Push your code to GitHub
-2. Log in to Netlify and click "New site from Git"
-3. Select your GitHub repository
-4. Configure build settings:
-   - Base directory: `client`
-   - Build command: `npm run build`
-   - Publish directory: `build`
-5. Click "Deploy site"
+# ⚙ Installation
 
-#### Troubleshooting Netlify 404 Errors
+### Clone the repository
 
-If you encounter "Page not found" errors on Netlify:
-
-1. Ensure the `_redirects` file exists in the `client/public` directory
-2. Verify your `netlify.toml` configuration is correct
-3. Try deploying again with the updated configuration
-
-### Backend (Optional - for full functionality)
-
-The backend can be deployed to platforms like Heroku, Render, or Railway:
-
-1. Create a MongoDB Atlas account and database
-2. Set the environment variable `MONGO_URI` with your MongoDB connection string
-3. Update the CORS settings in `server/index.js` to allow requests from your Netlify domain
-4. Deploy the server directory to your chosen platform
-5. Update the API URL in the frontend to point to your deployed backend
-
-## Local Development
-
-### Frontend
 ```bash
-cd client
-npm install
-npm start
+git clone https://github.com/yourusername/fake-news-detector.git
+cd fake-news-detector
 ```
 
-### Backend
+---
+
+# ▶ Running Locally
+
+## Start Backend
+
 ```bash
 cd server
 npm install
 npm run dev
 ```
 
-## License
+Backend runs on:
 
-MIT
+```
+http://localhost:5000
+```
+
+---
+
+## Start Frontend
+
+```bash
+cd client
+npm install
+npm start
+```
+
+Open:
+
+```
+http://localhost:3000
+```
+
+---
+
+# 🌐 Deployment
+
+## Frontend Deployment (Netlify)
+
+1️⃣ Push code to GitHub  
+2️⃣ Login to Netlify  
+3️⃣ Select **New site from Git**
+
+### Build settings
+
+```
+Base directory: client
+Build command: npm run build
+Publish directory: build
+```
+
+---
+
+## Backend Deployment
+
+You can deploy backend on:
+
+- Render
+- Railway
+- Heroku
+- AWS EC2
+
+### Environment Variable
+
+```
+MONGO_URI = your_mongodb_connection_string
+```
+
+---
+
+# 📊 How Detection Works
+
+The fake news detector analyzes:
+
+✔ Suspicious keywords  
+✔ Source credibility  
+✔ Text sentiment  
+✔ Headline patterns  
+✔ Content reliability
+
+The algorithm then calculates a **confidence score** representing the probability of fake news.
+
+---
+
+# 🧪 Example Detection Result
+
+```
+Input:
+"Breaking: Celebrity discovered secret cure for cancer!"
+
+Output:
+⚠ Likely Fake News
+Confidence Score: 82%
+Reason:
+- Sensational language detected
+- Unverified claim
+- Suspicious headline structure
+```
+
+---
+
+# 👨‍💻 Author
+
+**Ranbir Singh**
+
+💻 GitHub  
+https://github.com/RanbirProjects
+
+🔗 LinkedIn  
+https://www.linkedin.com/in/ranbirsingh1001/
+
+🧠 LeetCode  
+https://leetcode.com/u/ranbirsingh7/
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please **star the repository ⭐**
+
+It helps others discover it!
+
+---
+
+<p align="center">
+🧠 Built with MERN Stack & Curiosity
+</p>
