@@ -7,17 +7,17 @@
     "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
-    "axios": "0.24.0",
+    "axios": "0.34.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-router-dom": "6.0.0",
+    "react-router-dom": "7.18.5",
     "react-scripts": "5.0.1",
     "tailwindcss": "2.2.19"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "npm-force-resolutions": "^0.0.10",
-    "postcss": "^8.4.47"
+    "postcss": "^8.5.23"
   },
   "resolutions": {
     "nth-check": "^2.0.1",
